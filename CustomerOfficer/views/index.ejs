@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+<head>
+    <title>Customer Officer Station</title>
+    <meta charset = "UTF-8" />
+    <link rel='stylesheet' href='/stylesheets/officerstyle.css' type = 'text/css'>
+
+</head>
+<body>
+	<div id='wrapper'>
+		<div id='leftWrapper'>
+			<fieldset id='leftTop' style="border: 3px solid #fcb132; border-bottom:0px">
+				<div class='blueBox'>
+					Customer Details
+				</div>
+				<h2 class='mainText' style='padding-left:3%'>
+					Name: <%= name%><br>
+					Membership ID: 23124	
+				</h2>
+
+			</fieldset>
+			<fieldset id='leftBottom' style="border: 3px solid #fcb132;">
+				<div class='blueBox'>
+						Customer Profile
+					</div>
+					<h2 id='barText'>&nbsp;Personality Profile</h2>
+					<div id='rightText'>
+					<% data.docs[0].personalityAnalysis.personality.forEach(function(item){ %>
+					<div class="skillbox">
+						<p><%= item.name%></p>
+						<p><%= Math.round(item.raw_score * 100) / 100%></p>
+						<div class="skill">
+						  <% var width = Math.round(item.raw_score * 100)%>
+						  <div class="skill_level" style ='width:<%=width%>%'></div>
+	
+						</div>
+						
+					 <% }); %>
+					</div>
+					</div>
+
+					<% if(anger>=0.5){%>
+					<p style='font-size:130%; color:red'>Client might be agitated</p>
+					<% } %>
+			</fieldset>
+		</div>
+			<fieldset id='rightWrapper' style="border: 3px solid #fcb132;">
+				<div class='blueBox'>
+						Case Details
+					</div>
+					<h1 style='color:#003778; padding-left:4% '>Category: <%=cat%></h1>
+					<p class='mainText' id='caseDetailsText'>
+						<%=caseData.docs[0].caseInput %>
+					</p>
+					<br>
+					<h2 style='color:#003778; padding-left:4% '>Relevant Documents: <!--<a href='<%=url%>'><%=cat%></a>--></h2>
+					<br>
+					
+					<object width='400' height='100' type='text/ejs' data='<%=url%>'></object>
+					<object width='400' height='100' type='text/ejs' data='<%=url%>'></object>
+			</fieldset>
+	</div>
+</body>
+</html>

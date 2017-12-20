@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+<head>
+  <title >Case Terminal</title>
+  <meta charset = "UTF-8" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='stylesheets/style.css'>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+</head>
+<body>
+<div class = 'wrapper'>
+  <h1>Case Terminal</h1>
+
+  <fieldset style="border: 1px solid #fcb132;">
+
+    <!-- <legend>Please input the details below</legend> -->
+    <p>
+    <form action="/successfulForm" method="post">
+      <label>Name:</label><br>
+      <input name = "customerName"
+             type = "text"
+             value = "" /><br><br>
+
+      <label>Queue Number:</label><br>
+      <input name = "queueNumber"
+             type = "text"
+             placeholder="eg. 1001,2001,3001"
+             value = "" />
+
+
+    <br>
+      <br>
+      <br>
+      <br>
+      <label>Elaborate your case:</label><br>
+      <textarea
+              name = "caseInput"
+              placeholder="Details of your enquiries eg.Membership Queries/Lost items/Service"
+              rows = "5"
+              cols = "100"
+      ></textarea>
+      <button type='submit' class='beginButton'><span>Submit</span></button>
+    </form>
+    </p>
+
+
+  </fieldset>
+</div>
+</body>
+</html>

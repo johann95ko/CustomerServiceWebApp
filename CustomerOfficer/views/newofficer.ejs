@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+<head>
+    <title>Customer Officer Station</title>
+    <meta charset = "UTF-8" />
+    <link rel='stylesheet' href='stylesheets/officerstyle.css'>
+
+</head>
+<body>
+	<div id='wrapper'>
+		<div id='leftWrapper'>
+			<fieldset id='leftTop' style="border: 3px solid #fcb132; border-bottom:0px">
+				<div class='blueBox'>
+					Customer Details
+				</div>
+				<h2 class='mainText'>
+					Name: <br>
+					Membership ID: 23124	
+				</h2>
+
+			</fieldset>
+			<fieldset id='leftBottom' style="border: 3px solid #fcb132;">
+				<div class='blueBox'>
+					Case Details
+				</div>
+				<p class='mainText'>
+					<%=caseData.docs[0].caseInput %>
+				</p>
+			</fieldset>
+		</div>
+			<fieldset id='rightWrapper' style="border: 3px solid #fcb132;">
+				<div class='blueBox'>
+					Customer Profile
+				</div>
+				<h1 id='barText'>Personality Profile</h1>
+				<div id='rightText'>
+        		<% data.docs[0].personalityAnalysis.personality.forEach(function(item){ %>
+			    <!-- <div class="skillbox">
+			        <p><%= item.name%></p>
+			        <p><%= Math.round(item.raw_score * 100) / 100%></p>
+					<script>
+						var score = Math.round(item.raw_score * 100) / 100;
+					</script>
+			        <div class="skill">
+			          <div id='bar' class="skill_level" ></div>
+			          <script>
+							document.findElementById('bar').width(score+'%');
+			          </script>
+			        </div> -->
+			        <h2 class = 'mainText'><%= item.name%>: <%= Math.round(item.raw_score * 100) / 100%></h2>
+			        <br>
+				 <% }); %>
+				</div>
+			    <!-- </div> -->
+
+			</fieldset>
+	</div>
+</body>
+</html>
